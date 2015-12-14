@@ -30,11 +30,15 @@ TARGET_CPU_SMP := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x04000000 --tags_offset 0x00000100
 BOARD_KERNEL_CMDLINE :=
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_PAGESIZE := 2048
-TARGET_PREBUILT_KERNEL := device/amazon/ford/kernel
+BOARD_KERNEL_PAGESIZE := 4096
 
 BOARD_HAS_MTK_HARDWARE := true
 MTK_HARDWARE := true
+
+TARGET_PREBUILT_KERNEL := device/amazon/ford/kernel
+#TARGET_KERNEL_SOURCE := kernel/amazon/ford
+#TARGET_KERNEL_CONFIG := ford_cyanogenmod_defconfig
+#TARGET_KERNEL_VARIANT_CONFIG := ford_cyanogenmod_defconfig
 
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
@@ -88,9 +92,10 @@ BLOCK_BASED_OTA := false
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file
 
 # Cyanogen recovery
-RECOVERY_VARIANT := cm
+RECOVERY_VARIANT :=
 TARGET_RECOVERY_FSTAB := device/amazon/ford/recovery/root/recovery.fstab
 TARGET_RECOVERY_INITRC := device/amazon/ford/recovery/root/init.rc
+TARGET_RECOVERY_UI_LIB := librecovery_ui_ford
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
