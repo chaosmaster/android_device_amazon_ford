@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <remote name="my-github" fetch="https://github.com/" />
-  <remote name="my-bitbucket" fetch="https://bitbucket.org/" />
+  <remote name="bitbucket" fetch="https://bitbucket.org/" />
 
   <remove-project name="CyanogenMod/android_system_extras_su" />
   <remove-project name="CyanogenMod/android_packages_apps_Settings" />
