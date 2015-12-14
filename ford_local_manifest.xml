@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="my-github" fetch="https://github.com/" />
+  <remote name="my-bitbucket" fetch="https://bitbucket.org/" />
+
+  <remove-project name="CyanogenMod/android_system_extras_su" />
+  <remove-project name="CyanogenMod/android_packages_apps_Settings" />
+
+  <project path="device/amazon/ford" name="chaosmaster/android_device_amazon_ford" remote="github" revision="cm-12.1"/>
+  <!--<project path="device/amazon/ford" name="amazonfire2015/cm_device_amazon_ford" remote="bitbucket" revision="cm-12.1"/>-->
+
+  <project path="kernel/amazon/ford" name="chaosmaster/android_kernel_amazon_ford" remote="github" revision="cm-12.1"/>
+  <project path="system/extras/su" name="chaosmaster/android_system_extras_su" remote="github" revision="cm-12.1"/>
+  <project path="packages/apps/Settings" name="chaosmaster/android_packages_apps_Settings" remote="github" revision="cm-12.1"/>
+
+
+</manifest>
