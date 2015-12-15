@@ -13,5 +13,10 @@
   <project path="system/extras/su" name="chaosmaster/android_system_extras_su" remote="github" revision="cm-12.1"/>
   <project path="packages/apps/Settings" name="chaosmaster/android_packages_apps_Settings" remote="github" revision="cm-12.1"/>
 
+  <project path="device/amazon/ford/modules/selinux_permissive" name="chaosmaster/ford_selinux_permissive" remote="github" revision="master"/>
+
+  <project path="system/extras/kexec-tools" name="Tasssadar/kexec-tools" remote="github" revision="master"/>
+  <project path="device/amazon/ford/modules/kexec" name="chaosmaster/ford_kexec" remote="github" revision="master"/>
+  <project path="device/amazon/ford/modules/atags_procfs" name="chaosmaster/ford_atags_procfs" remote="github" revision="master"/>
 
 </manifest>
