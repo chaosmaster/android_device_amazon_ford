@@ -36,9 +36,9 @@ BOARD_HAS_MTK_HARDWARE := true
 MTK_HARDWARE := true
 
 TARGET_PREBUILT_KERNEL := device/amazon/ford/kernel
-#TARGET_KERNEL_SOURCE := kernel/amazon/ford
-#TARGET_KERNEL_CONFIG := ford_cyanogenmod_defconfig
-#TARGET_KERNEL_VARIANT_CONFIG := ford_cyanogenmod_defconfig
+TARGET_KERNEL_SOURCE := kernel/amazon/ford
+TARGET_KERNEL_CONFIG := ford_cyanogenmod_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := ford_cyanogenmod_defconfig
 
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
@@ -111,7 +111,7 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "/external_sd"
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/amazon/ford/releasetools/ota_from_target_files
 
 SELINUX_MODULE:
-	make -C device/amazon/ford/modules/selinux_permissive/ KERNEL=$(KERNEL_OUT) ARCH="arm" CROSS_COMPILE="arm-eabi-" module
-	mv device/amazon/ford/modules/selinux_permissive/selinux_permissive.ko $(KERNEL_MODULES_OUT)/vcodec_kernel_driver.ko
+	make -C device/amazon/ford/modules/selinux_permissive/ KERNEL=$(KERNEL_OUT) ARCH="arm" CROSS_COMPILE="arm-eabi-" MDIR="$(PWD)/device/amazon/ford/modules/selinux_permissive/" module
+	cp device/amazon/ford/modules/selinux_permissive/selinux_permissive.ko $(KERNEL_MODULES_OUT)/vcodec_kernel_driver.ko
     
 TARGET_KERNEL_MODULES := SELINUX_MODULE
