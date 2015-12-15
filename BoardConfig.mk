@@ -109,3 +109,9 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "/external_sd"
 
 # CUSTOM RELEASE TOOLS FOR EXTRA LINKS IN UPDATER-SCRIPT
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/amazon/ford/releasetools/ota_from_target_files
+
+SELINUX_MODULE:
+	make -C device/amazon/ford/modules/selinux_permissive/ KERNEL=$(KERNEL_OUT) ARCH="arm" CROSS_COMPILE="arm-eabi-" module
+	mv device/amazon/ford/modules/selinux_permissive/selinux_permissive.ko $(KERNEL_MODULES_OUT)/vcodec_kernel_driver.ko
+    
+TARGET_KERNEL_MODULES := SELINUX_MODULE
